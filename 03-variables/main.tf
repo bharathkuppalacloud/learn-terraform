@@ -43,7 +43,6 @@ output "map" {
 
 variable "c" {
   type = number
-  default = ""
 }
 
 output "c1" {
