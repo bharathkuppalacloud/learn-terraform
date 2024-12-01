@@ -15,7 +15,14 @@ variable "l" {
   default = [1,'ad',false,21.1]
 }
 
+#map variable
 
+variable "m" {
+  default = {
+    course = "DevOps"
+    trainer = "John"
+  }
+}
 
 output "x" {
   value = var.x
@@ -26,6 +33,6 @@ output "x1" {
 }
 
 output "x2" {
-  value = "value of y - ${var.y}  ${var.z}"
+  value = "value of y,z,m - ${var.y}  ${var.z} ${var.m.course}  ${var.m.trainer}"
 
 }
