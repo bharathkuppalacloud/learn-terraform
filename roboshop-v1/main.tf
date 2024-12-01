@@ -4,8 +4,15 @@ resource "aws_instance" "frontend" {
   vpc_security_group_ids=["sg-01c7b204ed4d4544b"]
 
   tags = {
-    Name = "frontend"
+    Name = "frontend.dev"
   }
+}
+resource "aws_route53_record" "frontend" {
+  zone_id = "Z06892942YSXS0PDMB6S5"
+  name    = "frontend.dev.codedeploywithbharath.tech"
+  type    = "A"
+  ttl     = 15
+  records = [aws_instance.frontend.private_ip]
 }
 
 resource "aws_instance" "mongo" {
@@ -14,7 +21,7 @@ resource "aws_instance" "mongo" {
   vpc_security_group_ids=["sg-01c7b204ed4d4544b"]
 
   tags = {
-    Name = "mongo"
+    Name = "mongo.dev"
   }
 }
 
@@ -24,7 +31,7 @@ resource "aws_instance" "catalogue" {
   vpc_security_group_ids=["sg-01c7b204ed4d4544b"]
 
   tags = {
-    Name = "catalogue"
+    Name = "catalogue.dev"
   }
 
 
