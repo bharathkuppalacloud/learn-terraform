@@ -24,6 +24,13 @@ resource "aws_instance" "mongo" {
     Name = "mongo.dev"
   }
 }
+resource "aws_route53_record" "mongo" {
+  zone_id = "Z06892942YSXS0PDMB6S5"
+  name    = "mongo.dev.codedeploywithbharath.tech"
+  type    = "A"
+  ttl     = 15
+  records = [aws_instance.mongo.private_ip]
+}
 
 resource "aws_instance" "catalogue" {
   ami           = "ami-09c813fb71547fc4f"
@@ -35,4 +42,13 @@ resource "aws_instance" "catalogue" {
   }
 
 
+}
+
+
+resource "aws_route53_record" "catalogue" {
+  zone_id = "Z06892942YSXS0PDMB6S5"
+  name    = "catalogue.dev.codedeploywithbharath.tech"
+  type    = "A"
+  ttl     = 15
+  records = [aws_instance.catalogue.private_ip]
 }
