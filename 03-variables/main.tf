@@ -40,3 +40,12 @@ output "x2" {
 output "map" {
   value = "Course name - ${var.m["course"]} , ${var.m["trainer"]}"
 }
+
+variable "c" {
+  type = number
+  default = ""
+}
+
+output "c1" {
+  value = var.c
+}
