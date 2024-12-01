@@ -36,3 +36,7 @@ output "x2" {
   value = "value of y,z,m - ${var.y}  ${var.z} ${var.m.course}  ${var.m.trainer}"
 
 }
+
+output "map" {
+  value = "Course name - ${var.m["course"]} , ${var.m["trainer"]}"
+}
