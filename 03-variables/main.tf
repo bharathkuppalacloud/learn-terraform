@@ -12,7 +12,7 @@ variable "z" {
 
 # list variable
 variable "l" {
-  default = [1,'ad',false,21.1]
+  default = [1,"ad",false,21.1]
 }
 
 #map variable
