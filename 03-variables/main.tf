@@ -46,5 +46,5 @@ variable "c" {
 }
 
 output "c1" {
-  value = "taking thus c valuse form Tfvars ${var.c}"
+  value = "taking this c value form Tfvars ${var.c}"
   }
