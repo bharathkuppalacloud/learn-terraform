@@ -27,14 +27,14 @@ resource "null_resource" "instances" {
   for_each = var.instances
 }
 
-resource "null_resource1" "instances" {
+resource "null_resource" "instances" {
   for_each = var.instances.frontend
 }
 
-resource "null_resource2" "instances" {
+resource "null_resource" "instances" {
   for_each = var.instances.mongo
 }
 
-resource "null_resource3" "instances" {
+resource "null_resource" "instances" {
   for_each = var.instances.catalogue
 }
