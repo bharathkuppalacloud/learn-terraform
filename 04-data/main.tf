@@ -7,3 +7,7 @@ data "aws_ami" "example" {
 output "ami" {
   value = data.aws_ami.example
 }
+
+output "ami1" {
+  value = data.aws_ami.example.name
+}
