@@ -1,5 +1,9 @@
+provider "aws" {
+  region = "us-west-1"
+}
+
+
 resource "aws_instance" "frontend" {
-  region = "us-east-1"
   ami           = "ami-09c813fb71547fc4f"
   instance_type = "t2.micro"
   vpc_security_group_ids=["sg-01c7b204ed4d4544b"]
