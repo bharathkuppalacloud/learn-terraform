@@ -8,6 +8,6 @@ resource "aws_instance" "test" {
   }
 }
 
-output "private" {
+output "private_ip" {
   value = aws_instance.test.private_ip
 }
